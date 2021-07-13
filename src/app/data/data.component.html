@@ -1,0 +1,52 @@
+<div class="container mt-5">
+    <div class="row">
+<h5>List of Employees</h5>
+        <div class="col-md-9">
+            <table class="table table-light mt-3">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Name</th>
+                        <th>Year</th>
+                        <th>Id</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let a of data1">
+                        <td>{{a.name}}</td>
+                        <td>{{a.year}}</td>
+                        <td>{{a.id}}</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+<h5>ADD NEW Users</h5>
+    <div class="row">
+        <div class="col-md-9">
+            <input #name type="text" class="form-control" [placeholder]="UserName">
+            <button (click)="onclick(name)" class="btn btn-danger mt-3">Create User</button>
+            <table class="table table-light mt-3">
+                <thead class="thead-light">
+                    <tr>
+                        <th>sl.no</th>
+                        <th>Username</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let i of userList;  index as userno">
+                        <td>{{userno + 1}}</td>
+                        <td>{{i}}</td>
+                        <td>
+                            <button type="button" class="btn btn-danger" (click)="remove(userno)">Remove</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
